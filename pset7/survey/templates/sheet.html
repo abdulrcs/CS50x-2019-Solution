@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Westeros Census 2020</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">House</th>
+      <th scope="col">Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for citizen in survey %}
+    <tr>
+        <th scope="row">{{ loop.index }}</th>
+        <td>{{ citizen["name"] }}</td>
+        <td>{{ citizen["house"] }}</td>
+        <td>{{ citizen["role"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+
